@@ -35,6 +35,7 @@ import org.bouncycastle.openssl.PEMParser;
 import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
 import org.sonar.api.ce.ComputeEngineSide;
 import org.sonar.api.server.ServerSide;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -64,6 +65,7 @@ public class RestApplicationAuthenticationProvider implements GithubApplicationA
     private final UrlConnectionProvider urlProvider;
     private final ObjectMapper objectMapper;
 
+    @Autowired
     public RestApplicationAuthenticationProvider(Clock clock, LinkHeaderReader linkHeaderReader, UrlConnectionProvider urlProvider) {
         super();
         this.clock = clock;

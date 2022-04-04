@@ -36,6 +36,7 @@ import org.sonar.api.utils.log.Loggers;
 import org.sonar.db.alm.setting.ALM;
 import org.sonar.db.alm.setting.AlmSettingDto;
 import org.sonar.db.alm.setting.ProjectAlmSettingDto;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Optional;
 
@@ -50,6 +51,7 @@ public class DefaultBitbucketClientFactory implements BitbucketClientFactory {
     private final HttpClientBuilderFactory httpClientBuilderFactory;
     private final Settings settings;
 
+    @Autowired
     public DefaultBitbucketClientFactory(Settings settings, HttpClientBuilderFactory httpClientBuilderFactory) {
         this.httpClientBuilderFactory = httpClientBuilderFactory;
         this.settings = settings;
